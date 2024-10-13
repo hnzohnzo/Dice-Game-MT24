@@ -8,19 +8,21 @@ public class DiceGame {
 
         System.out.println("Welcome to the Dice Game!");
 
-        // Game setup
+        // Spelaren väljer och skriver in sitt namn
         System.out.print("Enter player name: ");
         String playerName = scanner.nextLine();
         Player player = new Player(playerName);
 
-        System.out.print("Enter the number of sides for the die: ");
+        // Spelaren väljer hur många sidor tärningen ska ha
+         System.out.print("Enter the number of sides for the die: ");
         int numberOfSides = scanner.nextInt();
         player.addDie(numberOfSides);
 
+        // Spelaren väljer hur många rundor av spelet hen vill spela.
         System.out.print("Enter the number of rounds to play: ");
         int numberOfRounds = scanner.nextInt();
 
-        // Game loop
+        // ForLoop
         for (int round = 1; round <= numberOfRounds; round++) {
             System.out.println("\nRound " + round);
             System.out.print("Guess a number (1-" + numberOfSides + "): ");
@@ -41,16 +43,26 @@ public class DiceGame {
             System.out.println("Current score: " + player.getScore());
         }
 
-        // Game over - Spelet är slut
+        // Game over - Spelet är slut.
         System.out.println("\nGame Over!");
         System.out.println(
                 player.getName() + ", your final score is: " + player.getScore() + " out of " + numberOfRounds);
 
         scanner.close();
-        // Calculate percentage of correct guesses
+        // Uträkning av procentuellt rätt svarade gissningar.
         double percentage = ((double) player.getScore() / numberOfRounds) * 100;
 
-        // Display customized message based on the percentage
+        // Spelaren får olika text-meddelanden baserat på procentuell % vinst marginal
+        // Om spelaren får 100 % rätt visas följande text:'You nailed it!, Good job.
+        // Om spelaren får över 75 - 99 % rätt visas följande text: The odds are in your
+        // favor! Good job.
+        // Om spelaren får mellan 50 - 74 % rätt visas följande text: Not bad at all,
+        // Good job.
+        // Om spelaren får mellan 0 - 49 % rätt visas följande text: Not bad, not
+        // perfect. Good job nonetheless.
+        // Om spelaren får 0 % rätt visas följande text: Not your lucky day. Better luck
+        // next time.
+
         if (percentage == 100) {
             System.out.println("You nailed it! " + percentage + "% correct!, Good job " + player.getName() + "!");
         } else if (percentage >= 75) {
