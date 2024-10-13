@@ -10,7 +10,7 @@ public class Die {
     public Die(int numberOfSides) {
         this.numberOfSides = numberOfSides;
         this.random = new Random();
-        roll(); // Initialize with a random value
+        roll(); 
     }
 
     public int getNumberOfSides() {

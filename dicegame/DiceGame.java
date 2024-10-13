@@ -6,20 +6,23 @@ public class DiceGame {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Welcome to the Dice Game!");
+        System.out.println("Welcome to this simple Dice game");
+        System.out.println("------------------------------------------------------------------------------------------");
 
         // Spelaren väljer och skriver in sitt namn
-        System.out.print("Enter player name: ");
+        System.out.print("Let's begin. Start by choosing a name for yourself: ");
         String playerName = scanner.nextLine();
         Player player = new Player(playerName);
 
         // Spelaren väljer hur många sidor tärningen ska ha
-         System.out.print("Enter the number of sides for the die: ");
+        System.out.println("------------------------------------------------------------------------------------------");
+        System.out.print("That's a beautiful name. Now how many sides do you want your die to have?: ");
         int numberOfSides = scanner.nextInt();
         player.addDie(numberOfSides);
 
         // Spelaren väljer hur många rundor av spelet hen vill spela.
-        System.out.print("Enter the number of rounds to play: ");
+        System.out.println("------------------------------------------------------------------------------------------");
+        System.out.print("Great choice. Continue by choosing how many rounds you want to play: ");
         int numberOfRounds = scanner.nextInt();
 
         // ForLoop
@@ -34,10 +37,10 @@ public class DiceGame {
             System.out.println("The die rolled: " + rollResult);
 
             if (guess == rollResult) {
-                System.out.println("Correct guess! You get a point.");
+                System.out.println("You guessed correctly! One point for you.");
                 player.increaseScore();
             } else {
-                System.out.println("Sorry, that's not correct.");
+                System.out.println("Sorry, that's not correct. Better luck next round!");
             }
 
             System.out.println("Current score: " + player.getScore());
