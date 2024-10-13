@@ -41,25 +41,28 @@ public class DiceGame {
             System.out.println("Current score: " + player.getScore());
         }
 
-        // Game over
+        // Game over - Spelet är slut
         System.out.println("\nGame Over!");
-        System.out.println(player.getName() + ", your final score is: " + player.getScore() + " out of " + numberOfRounds);
+        System.out.println(
+                player.getName() + ", your final score is: " + player.getScore() + " out of " + numberOfRounds);
 
         scanner.close();
         // Calculate percentage of correct guesses
-double percentage = ((double) player.getScore() / numberOfRounds) * 100;
+        double percentage = ((double) player.getScore() / numberOfRounds) * 100;
 
-// Display customized message based on the percentage
-if (percentage == 100) {
-    System.out.println("You nailed it! " + percentage + "% correct!, Good job " + player.getName() + "!");
-} else if (percentage >= 75) {
-    System.out.println(percentage + "% correct! The odds are in your favor! Good job, " + player.getName() + "!");
-} else if (percentage >= 50) {
-    System.out.println(percentage + "% correct. Not bad at all, Good job " + player.getName() + "!");
-} else if (percentage > 0) {
-    System.out.println(percentage + "% correct. Not bad, Not perfect. Good job nonetheless " + player.getName() + "!");
-} else {
-    System.out.println("Not your lucky day, Better luck next time " + player.getName() + "!");
-}
+        // Display customized message based on the percentage
+        if (percentage == 100) {
+            System.out.println("You nailed it! " + percentage + "% correct!, Good job " + player.getName() + "!");
+        } else if (percentage >= 75) {
+            System.out
+                    .println(percentage + "% correct! The odds are in your favor! Good job, " + player.getName() + "!");
+        } else if (percentage >= 50) {
+            System.out.println(percentage + "% correct. Not bad at all, Good job " + player.getName() + "!");
+        } else if (percentage > 0) {
+            System.out.println(
+                    percentage + "% correct. Not bad, Not perfect. Good job nonetheless " + player.getName() + "!");
+        } else {
+            System.out.println("Not your lucky day, Better luck next time " + player.getName() + "!");
+        }
     }
 }
