@@ -32,6 +32,11 @@ public class DiceGame {
         // 3. Jämför tärningens resultat med spelarens gissning
         // 4. Updaterar resultat
         for (int round = 1; round <= numberOfRounds; round++) {
+        System.out.println("--------------------------------------------------------------------------------------------");    
+        // Vid runda 1, visa specifikt meddelande.
+            if (round == 1) {
+                System.out.print("Welcome to the first round! Good luck!"); 
+            }
             System.out.println("\nRound " + round);
             System.out.print("Guess a number (1-" + numberOfSides + "): ");
             int guess = scanner.nextInt();
