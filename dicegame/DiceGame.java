@@ -25,7 +25,12 @@ public class DiceGame {
         System.out.print("Great choice. Continue by choosing how many rounds you want to play: ");
         int numberOfRounds = scanner.nextInt();
 
-        // ForLoop
+        // Spel Loop
+        // För varje runda
+        // 1. Får Spelarens gissning
+        // 2. Tärningen kastas
+        // 3. Jämför tärningens resultat med spelarens gissning
+        // 4. Updaterar resultat
         for (int round = 1; round <= numberOfRounds; round++) {
             System.out.println("\nRound " + round);
             System.out.print("Guess a number (1-" + numberOfSides + "): ");
