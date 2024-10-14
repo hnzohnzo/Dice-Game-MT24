@@ -6,7 +6,7 @@ public class DiceGame {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Welcome to this simple Dice game");
+        System.out.println("Welcome to this simple Dice game. The Game works by choosing a name and die size. Player then decides the number of rounds. For each round the player guesses a number, the die is rolled, if guessed matches roll, player scores a point. The game ends after all rounds are played, and final score + percentage message is calculated. Sounds fun right?");
         System.out.println("------------------------------------------------------------------------------------------");
 
         // Spelaren väljer och skriver in sitt namn
